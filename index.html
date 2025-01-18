@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Todonator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css">
+    <script type="module" src="main.js" defer></script>
+</head>
+<body>
+    <div class="card">
+        <header>
+            <h1>Todonator</h1>
+        </header>
+        <main>
+            <form>
+                <input id="title-input" type="text" placeholder="Enter a new todo..." autocomplete="off">
+                <button id="add-button">
+                    <svg class="icon">
+                        <use xlink:href="icons/icons.svg#add"></use>
+                    </svg>
+                </button>
+            </form>
+            <ul id="todo-list"></ul>
+        </main>
+        <footer>
+            <p>&copy; 2025 Particle Community</p>
+        </footer>
+    </div>
+</body>
+</html>

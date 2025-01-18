@@ -1,0 +1,265 @@
+/* Globals */
+:root {
+    --base: #ffffff;
+    --base-variant: #ebeaf1;
+
+    --neutral: #5f6b75;
+
+    --secondary: #0b151d;
+    --secondary-light: #152938;
+    --secondary-lighter: #2c5373;
+
+    --accent: #4072fe;
+    --accent-light: #7096ff;
+    --accent-lighter: #96b2ff;
+
+    --warning: #fe0d4d;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: var(--base-variant);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+svg.icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    vertical-align: middle;
+    fill: currentColor;
+}
+
+input, button {
+    outline: none;
+}
+
+/* Card */
+div.card {
+    margin: 1.5rem;
+    background-color: var(--base);
+    border-radius: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+    width: 100%;
+    max-width: 40rem;
+    max-height: 80vh;
+    display: flex;
+    flex-direction: column;
+}
+
+div.card header {
+    background-color: var(--secondary);
+    color: var(--base);
+    padding: 1.5rem;
+    border-radius: 1rem 1rem 0 0;
+}
+
+div.card header h1 {
+    margin: 0;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+div.card main {
+    padding: 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    overflow-y: hidden;
+}
+
+div.card main form {
+    display: flex;
+}
+
+div.card main form input#title-input {
+    padding: 0.75rem;
+    flex-grow: 1;
+    background-color: var(--base);
+    color: var(--secondary);
+    border: 0.1875rem solid var(--secondary);
+    border-right: none;
+    border-radius: 0.5rem 0 0 0.5rem;
+    font-size: 1rem;
+}
+
+div.card main form button#add-button {
+    padding: 0.75rem 1.5rem;
+    background-color: var(--secondary);
+    color: var(--base);
+    border: none;
+    border-radius: 0 0.5rem 0.5rem 0;
+    cursor: pointer;
+    font-size: 1rem;
+    user-select: none;
+    transition: background-color 0.3s ease-in-out;
+}
+
+div.card main form button#add-button:hover {
+    background-color: var(--secondary-light);
+}
+
+div.card main form button#add-button:active {
+    background-color: var(--secondary-lighter);
+}
+
+div.card main ul#todo-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    overflow-y: auto;
+}
+
+div.card main ul#todo-list:empty {
+    display: none;
+}
+
+div.card main ul#todo-list li {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+}
+
+div.card main ul#todo-list li label.todo-checkbox {
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+div.card main ul#todo-list li label.todo-checkbox input {
+    display: none;
+}
+
+div.card main ul#todo-list li label.todo-checkbox span.checkmark {
+    box-sizing: border-box;
+    width: 2rem;
+    height: 2rem;
+    background-color: transparent;
+    color: transparent;
+    border: 0.1875rem solid var(--secondary);
+    border-radius: 50%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+}
+
+div.card main ul#todo-list li label.todo-checkbox input:checked + span.checkmark {
+    background-color: var(--accent);
+    border: var(--accent);
+    color: var(--base);
+}
+
+div.card main ul#todo-list li label.todo-checkbox input:not(:checked) + span.checkmark:hover {
+    border-color: var(--accent);
+} 
+
+div.card main ul#todo-list li label.todo-checkbox input:checked + span.checkmark:hover {
+    background-color: var(--accent-light);
+    border-color: var(--accent-light);
+}
+
+div.card main ul#todo-list li label.todo-checkbox input:not(:checked) + span.checkmark:active {
+    background-color: var(--accent);
+    border-color: var(--accent);
+}
+
+div.card main ul#todo-list li label.todo-checkbox input:checked + span.checkmark:active {
+    background-color: var(--accent-lighter);
+    border-color: var(--accent-lighter);
+}
+
+div.card main ul#todo-list li p {
+    margin: 0;
+    flex-grow: 1;
+    color: var(--secondary);
+    word-wrap: break-word;
+    text-wrap: balance;
+    overflow-x: hidden;
+}
+
+div.card main ul#todo-list li.completed p {
+    text-decoration: line-through;
+    color: var(--neutral);
+}
+
+div.card main ul#todo-list li button.delete-button {
+    padding: 0;
+    background-color: transparent;
+    color: var(--secondary);
+    border: none;
+    cursor: pointer;
+    user-select: none;
+    transition: color 0.3s ease-in-out, transfrom 0.2s ease-in-out, rotate 0.2s ease-in-out;
+}
+
+div.card main ul#todo-list li button.delete-button:hover {
+    color: var(--warning);
+}
+
+div.card main ul#todo-list li button.delete-button:active {
+    color: var(--warning);
+    transform: scale(0.75);
+    rotate: 90deg;
+}
+
+div.card footer {
+    background-color: var(--base-variant);
+    color: var(--neutral);
+    padding: 1.5rem;
+    border-radius: 0 0 1rem 1rem;
+}
+
+div.card footer p {
+    margin: 0;
+    font-size: 0.75rem;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    :root {
+        font-size: 0.875rem;
+    }
+
+    * {
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    div.card {
+        margin: 0;
+        border-radius: 0;
+        width: 100vw;
+        height: 100vh;
+        max-width: none;
+        max-height: none;
+    }
+
+    div.card header {
+        border-radius: 0;
+        padding: 1.25rem;
+    }
+
+    div.card main {
+        padding: 1.25rem;
+        gap: 1.25rem;
+    }
+
+    div.card main ul#todo-list {
+        gap: 0.75rem;
+    }
+
+    div.card footer {
+        border-radius: 0;
+        padding: 1.25rem;
+    }
+}
