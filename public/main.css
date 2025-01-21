@@ -226,7 +226,7 @@ div.card footer p {
     text-align: center;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 768px) or (max-height: 512px) {
     :root {
         font-size: 0.875rem;
     }

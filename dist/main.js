@@ -33,6 +33,7 @@ function renderTodos() {
         checkboxLabel.className = "todo-checkbox";
         const checkboxInput = document.createElement("input");
         checkboxInput.type = "checkbox";
+        checkboxInput.name = "todoStatus";
         checkboxInput.checked = todo.isCompleted;
         checkboxInput.addEventListener("change", () => {
             todoList.toggleStatus(index);
